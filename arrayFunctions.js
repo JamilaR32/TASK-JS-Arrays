@@ -9,8 +9,15 @@
  * isArrayLengthOdd([1, 2, 3, 4]) -> flase
  */
 function isArrayLengthOdd(numbers) {
+  if (isArrayLengthOdd.length % 2 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
+
   // Your code here
 }
+console.log(isArrayLengthOdd([1, 2, 3]));
 
 /**
  * isArrayLengthEven(numbers):
@@ -23,8 +30,16 @@ function isArrayLengthOdd(numbers) {
  * isArrayLengthEven([1, 2, 3, 4]) -> true
  */
 function isArrayLengthEven(numbers) {
+  if (isArrayLengthEven.length % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+
   // Your code here
 }
+console.log(isArrayLengthEven([1, 2, 3]));
+// Your code here
 
 /**
  * addLailaToArray(instructors):
@@ -35,8 +50,12 @@ function isArrayLengthEven(numbers) {
  * addLailaToArray(["Mshary", "Hasan"]) -> ["Mshary", "Hasan", "Laila"]
  */
 function addLailaToArray(instructors) {
+  instructors.push("Laila");
+  return instructors;
+
   // Your code here
 }
+console.log(addLailaToArray(["ahmed", "sara"]));
 
 /**
  * eliminateTeam(teams):
@@ -47,9 +66,12 @@ function addLailaToArray(instructors) {
  * eliminateTeam(["Brazil", "Germany", "Italy"]) -> "Italy"
  */
 function eliminateTeam(teams) {
+  return teams.pop();
+  // let lastElement = teams.length - 1;
+
   // Your code here
 }
-
+console.log(eliminateTeam(["Brazil", "Germany", "Italy"]));
 /**
  * secondHalfOfArrayIfItIsEven(fruits):
  * - receives array `fruits`
@@ -62,7 +84,21 @@ function eliminateTeam(teams) {
  */
 function secondHalfOfArrayIfItIsEven(fruits) {
   // Your code here
+  if (fruits.length % 2 == 0) {
+    return fruits.slice(fruits.length / 2);
+  } else {
+    return [];
+  }
 }
+console.log(
+  secondHalfOfArrayIfItIsEven([
+    "apple",
+    "orange",
+    "banana",
+    "kiwi",
+    "blueberry",
+  ])
+);
 
 /**
  * youGottaCalmDown(shout):
@@ -79,5 +115,12 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  * - Use string method .slice()
  */
 function youGottaCalmDown(shout) {
+  let index = shout.indexOf("!");
+  if (index == -1) {
+    return shout;
+  } else {
+    return shout.slice(0, index + 1);
+  }
   // Your code here
 }
+console.log(youGottaCalmDown("HIiiiii"));
